@@ -36,7 +36,7 @@ app.get('*', function (req, res) {
     // res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-
-app.listen(8000, ()=>{
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+app.listen(port, ()=>{
     console.log("Starting server for project 3 ...")
 })
